@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "critical": "^0.8.1",
+    "merge:: "^1.0.0",
     "webpack-util-cleantmp": "^1.0.0"
   },
   "files": [
