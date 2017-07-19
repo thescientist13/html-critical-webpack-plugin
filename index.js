@@ -26,7 +26,7 @@ HtmlWebpackHarddiskPlugin.prototype.emit = function(compilation, callback) {
   })
 };
 
-HtmlWebpackHarddiskPlugin.prototype.apply(compiler) {
+HtmlWebpackHarddiskPlugin.prototype.apply = function(compiler) {
   compiler.plugin('compilation', function(compilation) {
     compilation.plugin('html-webpack-plugin-after-emit', function(htmlPluginData, callback) {
       this.emit.bind(this)
