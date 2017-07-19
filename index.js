@@ -1,6 +1,7 @@
 const resolve = require('path').resolve;
 const critical = require('critical');
 const cleantmp = require('webpack-util-cleantmp').cleantmp;
+const merge = require('merge');
 
 function HtmlWebpackCriticalPlugin (options) {};
 
@@ -13,10 +14,10 @@ HtmlWebpackHarddiskPlugin.prototype.emit = function(compilation, callback) {
     assets: compilation.assets
   })
   .subscribe((tmp) => {
-    const opts = {...options, ...{
+    const opts = merge(options, {
       base: resolve(tmp, options.base || ''),
       dest: resolve(tmp, options.dest)
-    }};
+    });
 
     critical.generate(opts, (err, output) => {
       subscription.unsubscribe();
