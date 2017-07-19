@@ -5,7 +5,7 @@ const merge = require('merge');
 
 function HtmlWebpackCriticalPlugin (options) {};
 
-HtmlWebpackHarddiskPlugin.prototype.emit = function(compilation, callback) {
+HtmlWebpackCriticalPlugin.prototype.emit = function(compilation, callback) {
   const options = this.options;
   const subscription = cleantmp({
     prefix: 'criticalcss',
@@ -26,7 +26,7 @@ HtmlWebpackHarddiskPlugin.prototype.emit = function(compilation, callback) {
   })
 };
 
-HtmlWebpackHarddiskPlugin.prototype.apply = function(compiler) {
+HtmlWebpackCriticalPlugin.prototype.apply = function(compiler) {
   compiler.plugin('compilation', function(compilation) {
     compilation.plugin('html-webpack-plugin-after-emit', function(htmlPluginData, callback) {
       this.emit.bind(this)
