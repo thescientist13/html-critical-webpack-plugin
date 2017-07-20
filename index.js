@@ -1,20 +1,20 @@
 const critical = require('critical');
 
-function HtmlWebpackPluginCritical (options) {
+function HtmlCriticalWebpackPlugin (options) {
   this.options = options;
 };
 
-HtmlWebpackPluginCritical.prototype.emit = function(compilation, callback) {
+HtmlCriticalWebpackPlugin.prototype.emit = function(compilation, callback) {
   critical.generate(this.options, (err, output) => {
     callback(err);
   });
 };
 
-HtmlWebpackPluginCritical.prototype.apply = function(compiler) {
+HtmlCriticalWebpackPlugin.prototype.apply = function(compiler) {
   var self = this;
   compiler.plugin('after-emit', function (compilation, callback) {
     self.emit(compilation, callback);
   });
 };
 
-module.exports = HtmlWebpackPluginCritical
+module.exports = HtmlCriticalWebpackPlugin

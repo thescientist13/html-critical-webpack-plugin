@@ -1,11 +1,11 @@
 {
-  "name": "html-webpack-plugin-critical",
+  "name": "html-critical-webpack-plugin",
   "version": "1.0.0",
   "description": "Webpack plugin for the critical CSS inliner library.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anthonygore/html-webpack-plugin-critical.git"
+    "url": "git+https://github.com/anthonygore/html-critical-webpack-plugin.git"
   },
   "keywords": [
     "webpack",
@@ -14,14 +14,14 @@
   "author": "anthonygore",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anthonygore/html-webpack-plugin-critical/issues"
+    "url": "https://github.com/anthonygore/html-critical-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/anthonygore/html-webpack-plugin-critical#readme",
+  "homepage": "https://github.com/anthonygore/html-critical-webpack-plugin#readme",
   "dependencies": {
     "critical": "^0.8.4"
   },
   "files": [
     "README.md",
-    "index.js",
+    "index.js"
   ]
 }
