@@ -1,42 +1,27 @@
 {
-  "name": "html-webpack-critical-plugin",
+  "name": "html-webpack-plugin-critical",
   "version": "1.0.0",
   "description": "Webpack plugin for the critical CSS inliner library.",
   "main": "index.js",
-  "scripts": {
-    "test": "tsc && jasmine"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anthonygore/html-webpack-critical-plugin.git"
+    "url": "git+https://github.com/anthonygore/html-webpack-plugin-critical.git"
   },
   "keywords": [
     "webpack",
     "critical"
   ],
-  "author": "jeffbcross",
+  "author": "anthonygore",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nrwl/webpack-plugin-critical/issues"
+    "url": "https://github.com/anthonygore/html-webpack-plugin-critical/issues"
   },
-  "homepage": "https://github.com/nrwl/webpack-plugin-critical#readme",
-  "devDependencies": {
-    "@types/jasmine": "^2.5.38",
-    "@types/node": "^6.0.53",
-    "jasmine": "^2.5.2",
-    "parse5": "^3.0.1"
-  },
+  "homepage": "https://github.com/anthonygore/html-webpack-plugin-critical#readme",
   "dependencies": {
-    "critical": "^0.8.1",
-    "merge": "^1.0.0",
-    "webpack-util-cleantmp": "^1.0.0"
+    "critical": "^0.8.4"
   },
   "files": [
-    "dist/critical.js",
-    "dist/critical.js.map",
-    "dist/critical.d.ts",
     "README.md",
     "index.js",
-    "index.d.ts"
   ]
 }
