@@ -1,38 +1,20 @@
-const resolve = require('path').resolve;
 const critical = require('critical');
-const cleantmp = require('webpack-util-cleantmp').cleantmp;
-const merge = require('merge');
 
-function HtmlWebpackCriticalPlugin (options) {};
-
-HtmlWebpackCriticalPlugin.prototype.emit = function(compilation, callback) {
-  const options = this.options;
-  const subscription = cleantmp({
-    prefix: 'criticalcss',
-    globToDisk: '**/*.+(css|html)',
-    globFromDisk: '**/*.+(css|html)',
-    assets: compilation.assets
-  })
-  .subscribe((tmp) => {
-    const opts = merge(options, {
-      base: resolve(tmp, options.base || ''),
-      dest: resolve(tmp, options.dest)
-    });
-
-    critical.generate(opts, (err, output) => {
-      subscription.unsubscribe();
-      callback(err);
-    });
-  })
+function HtmlWebpackPluginCritical (options) {
+  this.options = options;
 };
 
-HtmlWebpackCriticalPlugin.prototype.apply = function(compiler) {
-  compiler.plugin('compilation', function(compilation) {
-    compilation.plugin('html-webpack-plugin-after-emit', function(htmlPluginData, callback) {
-      this.emit.bind(this)
-      callback(null, htmlPluginData);
-    });
+HtmlWebpackPluginCritical.prototype.emit = function(compilation, callback) {
+  critical.generate(this.options, (err, output) => {
+    callback(err);
   });
 };
 
-module.exports = HtmlWebpackCriticalPlugin
+HtmlWebpackPluginCritical.prototype.apply = function(compiler) {
+  var self = this;
+  compiler.plugin('after-emit', function (compilation, callback) {
+    self.emit(compilation, callback);
+  });
+};
+
+module.exports = HtmlWebpackPluginCritical
