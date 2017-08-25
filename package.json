@@ -1,6 +1,6 @@
 {
   "name": "html-critical-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack plugin for the critical CSS inliner library.",
   "main": "dist/html-critical-webpack-plugin.js",
   "repository": {
