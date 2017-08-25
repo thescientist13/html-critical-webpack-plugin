@@ -17,6 +17,9 @@
     "url": "https://github.com/anthonygore/html-critical-webpack-plugin/issues"
   },
   "homepage": "https://github.com/anthonygore/html-critical-webpack-plugin#readme",
+  "scripts": {
+    "build": "rimraf ./dist && webpack --config ./webpack.config.js"
+  },
   "dependencies": {
     "critical": "^0.9.0"
   },
@@ -27,6 +30,7 @@
   "devDependencies": {
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
+    "rimraf": "^2.6.1",
     "webpack": "^3.5.5"
   }
 }

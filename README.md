@@ -4,7 +4,13 @@ A fork of Critical Webpack Plugin.
 
 This is simplified and runs after all files have been emitted so you can use it after Extract Text and HTML Webpack Plugin.
 
-#### Example:
+### Install
+
+```
+npm i --save-dev html-critical-webpack-plugin
+```
+
+### Example
 
 ```js
 const HtmlCriticalPlugin = require("html-critical-webpack-plugin");
