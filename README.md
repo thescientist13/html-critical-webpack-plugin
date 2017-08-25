@@ -37,5 +37,6 @@ module.export = {
 };
 ```
 
-#### Detailed explanation
+### Detailed explanation
+
 Read [Critical CSS and Webpack: Automatically Minimize Render-Blocking CSS](https://vuejsdevelopers.com/2017/07/24/critical-css-webpack/) blogpost.
