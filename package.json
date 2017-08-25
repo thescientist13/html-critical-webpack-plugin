@@ -2,7 +2,7 @@
   "name": "html-critical-webpack-plugin",
   "version": "1.0.0",
   "description": "Webpack plugin for the critical CSS inliner library.",
-  "main": "index.js",
+  "main": "dist/html-critical-webpack-plugin.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anthonygore/html-critical-webpack-plugin.git"
@@ -23,5 +23,10 @@
   "files": [
     "README.md",
     "index.js"
-  ]
+  ],
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.5.5"
+  }
 }

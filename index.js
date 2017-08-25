@@ -17,4 +17,4 @@ HtmlCriticalWebpackPlugin.prototype.apply = function(compiler) {
   });
 };
 
-module.exports = HtmlCriticalWebpackPlugin
+module.exports = HtmlCriticalWebpackPlugin;
