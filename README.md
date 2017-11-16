@@ -21,7 +21,7 @@ module.export = {
     new HtmlWebpackPlugin({ ... }),
     new ExtractTextPlugin({ ... }),
     new HtmlCriticalPlugin({
-      base: path.join(path.resolve(__dirname), 'dist/'),
+      base: path.resolve(__dirname, 'dist'),
       src: 'index.html',
       dest: 'index.html',
       inline: true,
