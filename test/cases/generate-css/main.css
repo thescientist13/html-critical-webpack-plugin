@@ -1,0 +1,15 @@
+.lazyload-wrapper .card-img {
+  border-radius: 0 !important;
+  min-height: 233px!important;
+  max-height: 233px!important;
+  object-fit: cover;
+}
+
+.fade-appear {
+  opacity: 0.01;
+}
+  
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 600ms ease-in; //ms should match the value of transitionAppearTimeout
+}
