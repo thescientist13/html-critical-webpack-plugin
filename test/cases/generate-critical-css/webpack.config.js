@@ -3,7 +3,6 @@ const HtmlWebpackCriticalPlugin = require('../../../index');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-console.log('__dirname', __dirname);
 
 module.exports = {
   entry: {

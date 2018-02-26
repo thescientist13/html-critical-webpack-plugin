@@ -9,6 +9,7 @@ describe('HtmlCriticalWebpackPlugin', () => {
       let hasRequiredFunction = typeof new HtmlCriticalWebpackPlugin().apply === 'function';
   
       assert.equal(hasRequiredFunction, true);
+      
       done();
     });
   
@@ -16,6 +17,7 @@ describe('HtmlCriticalWebpackPlugin', () => {
       let hasRequiredFunction = typeof new HtmlCriticalWebpackPlugin().emit === 'function';
   
       assert.equal(hasRequiredFunction, true);
+
       done();
     });    
 
