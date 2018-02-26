@@ -22,9 +22,7 @@
     "test": "mocha ./test/**/*.spec.js"
   },
   "dependencies": {
-    "critical": "^1.0.0",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "html-webpack-plugin": "^2.30.1"
+    "critical": "^1.0.0"
   },
   "files": [
     "README.md",
@@ -34,6 +32,8 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
     "jsdom": "^11.6.2",
     "mocha": "^5.0.1",
     "rimraf": "^2.6.2",
