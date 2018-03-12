@@ -14,7 +14,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: '[name].[chunkhash].bundle.js'
   },
 
@@ -29,11 +29,9 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin(),
-
     new ExtractTextWebpackPlugin('styles.[chunkhash].css'),
-
     new HtmlWebpackCriticalPlugin({
-      base: path.resolve(__dirname, 'dist'),
+      base: path.resolve(__dirname, 'build'),
       src: 'index.html',
       dest: 'index.html',
       inline: true
