@@ -8,10 +8,10 @@ module.exports = {
     filename: 'html-crtitical-webpack-plugin.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
         include: __dirname,
         exclude: /node_modules/
       }
