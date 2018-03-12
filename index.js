@@ -12,7 +12,7 @@ HtmlCriticalWebpackPlugin.prototype.emit = function(compilation, callback) {
 
 HtmlCriticalWebpackPlugin.prototype.apply = function(compiler) {
   var self = this;
-  compiler.plugin('after-emit', function (compilation, callback) {
+  compiler.hooks.afterEmit.tapAsync('HtmlCriticalWebpackPlugin', function (compilation, callback) {
     self.emit(compilation, callback);
   });
 };
