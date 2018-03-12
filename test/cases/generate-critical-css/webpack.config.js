@@ -5,30 +5,35 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+
+  mode: 'production',
+
   entry: {
     index: path.resolve(__dirname, 'index.js'),
     main: path.resolve(__dirname, 'main.js')
   },
 
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[chunkhash].bundle.js'
   },
 
-    module: {
-      rules: [{
-        test: /\.css$/,
-        use: ExtractTextWebpackPlugin.extract({
-          use: ['css-loader']
-        })
-      }
-    ]
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: ExtractTextWebpackPlugin.extract({
+        use: ['css-loader']
+      })
+    }]
   },
 
   plugins: [
     new HtmlWebpackPlugin(),
+
     new ExtractTextWebpackPlugin('styles.[chunkhash].css'),
+
     new HtmlWebpackCriticalPlugin({
-      base: path.resolve(__dirname, 'build'),
+      base: path.resolve(__dirname, 'dist'),
       src: 'index.html',
       dest: 'index.html',
       inline: true
