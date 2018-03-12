@@ -5,23 +5,21 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+  
+  mode: 'production',
+
   entry: {
     index: path.resolve(__dirname, 'index.js'),
     main: path.resolve(__dirname, 'main.js')
   },
 
-  output: {
-    path: path.resolve(__dirname, 'build')
-  },
-
-    module: {
-      rules: [{
-        test: /\.css$/,
-        use: ExtractTextWebpackPlugin.extract({
-          use: ['css-loader']
-        })
-      }
-    ]
+  module: {
+    // rules: [{
+    //   test: /\.css$/,
+    //   use: ExtractTextWebpackPlugin.extract({
+    //     use: ['css-loader']
+    //   })
+    // }]
   },
 
   plugins: [
