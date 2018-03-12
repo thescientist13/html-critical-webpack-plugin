@@ -25,7 +25,7 @@ describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
       });
     });
 
-    xit('should generate the expected critical <link> tag', (done) => {
+    it('should generate the expected critical <link> tag', (done) => {
       webpack(webpackConfig, () => {
         const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, {encoding: 'utf8'});
         const indexHtmlDom = new JSDOM(indexHtmlString);
@@ -42,7 +42,7 @@ describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
       })
     });
 
-    xit('should generate the expected critical <noscript> tag', (done) => {
+    it('should generate the expected critical <noscript> tag', (done) => {
       webpack(webpackConfig, () => {
         const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, {encoding: 'utf8'});
         const indexHtmlDom = new JSDOM(indexHtmlString);
