@@ -1,5 +1,5 @@
 import './main.css';
 
-export default class Main {
+export default class MainModule {
   constructor() {}
 }

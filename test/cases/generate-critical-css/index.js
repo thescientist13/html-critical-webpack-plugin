@@ -1,5 +1,5 @@
 import './index.css';
 
-export default class Index {
+export default class IndexModule {
   constructor() {}
 }
