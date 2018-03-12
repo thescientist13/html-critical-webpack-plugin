@@ -11,7 +11,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'build')
   },
 
     module: {
@@ -25,13 +25,13 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin(),
-    new ExtractTextWebpackPlugin('styles.[chunkhash].css'),
-    new HtmlWebpackCriticalPlugin({
-      base: path.resolve(__dirname, 'build'),
-      src: 'index.html',
-      dest: 'index.html',
-      inline: true
-    })
+    // new HtmlWebpackPlugin(),
+    // new ExtractTextWebpackPlugin('styles.[chunkhash].css'),
+    // new HtmlWebpackCriticalPlugin({
+    //   base: path.resolve(__dirname, 'build'),
+    //   src: 'index.html',
+    //   dest: 'index.html',
+    //   inline: true
+    // })
   ]
 };
