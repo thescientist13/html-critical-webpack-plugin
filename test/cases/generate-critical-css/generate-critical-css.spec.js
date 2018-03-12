@@ -7,7 +7,7 @@ const rimraf = require('rimraf');
 const webpackConfig = require('./webpack.config');
 const webpack = require('webpack');
 
-console.log(webpackConfig);
+console.log('spec webpackConfig', webpackConfig);
 
 describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
   const buildDirectory = path.resolve(__dirname, 'build');

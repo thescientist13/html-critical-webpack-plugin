@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  
+
   mode: 'production',
 
   entry: {
@@ -13,14 +13,14 @@ module.exports = {
     main: path.resolve(__dirname, 'main.js')
   },
 
-  module: {
-    // rules: [{
-    //   test: /\.css$/,
-    //   use: ExtractTextWebpackPlugin.extract({
-    //     use: ['css-loader']
-    //   })
-    // }]
-  },
+  // module: {
+  //   rules: [{
+  //     test: /\.css$/,
+  //     use: ExtractTextWebpackPlugin.extract({
+  //       use: ['css-loader']
+  //     })
+  //   }]
+  // },
 
   plugins: [
     // new HtmlWebpackPlugin(),
