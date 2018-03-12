@@ -25,27 +25,30 @@ describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
       });
     });
 
-    xit('should generate the expected critical <link> tag', (done) => {
+    it('should generate the expected critical <link> tag', (done) => {
       webpack(webpackConfig, () => {
         const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, {encoding: 'utf8'});
         const indexHtmlDom = new JSDOM(indexHtmlString);
         const linkTags = indexHtmlDom.window.document.querySelectorAll('link');
         
-        assert.equal(linkTags.length, 1);
+        assert.equal(linkTags.length, 2);
         assert.equal(linkTags[0].getAttribute('rel'), 'preload');
         assert.equal(linkTags[0].getAttribute('as'), 'style');
+
+        assert.equal(linkTags[1].getAttribute('rel'), 'preload');
+        assert.equal(linkTags[1].getAttribute('as'), 'style');
 
         done();
       })
     });
 
-    xit('should generate the expected critical <noscript> tag', (done) => {
+    it('should generate the expected critical <noscript> tag', (done) => {
       webpack(webpackConfig, () => {
         const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, {encoding: 'utf8'});
         const indexHtmlDom = new JSDOM(indexHtmlString);
         const noscriptTags = indexHtmlDom.window.document.querySelectorAll('noscript');
         
-        assert.equal(noscriptTags.length, 1);
+        assert.equal(noscriptTags.length, 2);
 
         done();
       });
