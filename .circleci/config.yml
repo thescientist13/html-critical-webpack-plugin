@@ -26,4 +26,4 @@ jobs:
 
       - run:
           name: Execute The Build
-          command: npm release
+          command: npm run release
