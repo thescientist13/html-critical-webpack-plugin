@@ -23,7 +23,3 @@ jobs:
       - run:
           name: Run Tests
           command: npm test
-
-      - run:
-          name: Execute The Build
-          command: npm run release
