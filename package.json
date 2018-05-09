@@ -20,7 +20,7 @@
   "scripts": {
     "build": "rimraf ./dist && webpack --config ./webpack.config.js",
     "ci": "webpack --config ./webpack.config.ci.js",
-    "test": "mocha ./test/**/*.spec.js"
+    "test": "mocha ./test/**/*.spec.js --timeout 5000"
   },
   "dependencies": {
     "critical": "^1.0.0"
