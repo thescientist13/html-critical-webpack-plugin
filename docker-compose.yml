@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+
+  nodejs:
+    image: thegreenhouse/nodejs-dev
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    command: tail -f /dev/null
