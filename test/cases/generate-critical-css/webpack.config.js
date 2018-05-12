@@ -1,6 +1,6 @@
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackCriticalPlugin = require('../../../index');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -21,15 +21,18 @@ module.exports = {
   module: {
     rules: [{
       test: /\.css$/,
-      use: ExtractTextWebpackPlugin.extract({
-        use: ['css-loader']
-      })
+      use: [
+        MiniCssExtractPlugin.loader,
+        'css-loader'
+      ]
     }]
   },
 
   plugins: [
     new HtmlWebpackPlugin(),
-    new ExtractTextWebpackPlugin('styles.[chunkhash].css'),
+
+    new MiniCssExtractPlugin(),
+    
     new HtmlWebpackCriticalPlugin({
       base: path.resolve(__dirname, 'build'),
       src: 'index.html',
