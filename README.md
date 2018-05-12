@@ -44,6 +44,8 @@ module.export = {
 Read [Critical CSS and Webpack: Automatically Minimize Render-Blocking CSS](https://vuejsdevelopers.com/2017/07/24/critical-css-webpack/) blogpost.
 
 ### Development
+
+#### Local Environment
 Since the main dependency of this project, critical, depends on an environment that supports Headless Chrome, [Docker](https://www.docker.com/) has been provided to support local development of this project.
 
 After you have [installed Docker](https://www.docker.com/community-edition), you can do the following to get setup:
@@ -58,3 +60,8 @@ Now you can run the project's `npm` scripts like usuual:
 **_Note_**: changes are bi-directional
 
 Learn more about Docker [here](https://docs.docker.com/get-started/) or [configuring Headless Chrome for your own machine](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md).
+
+#### Tasks
+1. To run unit tests - `npm run test`
+1. To build the project - `npm run ci`
+1. To build the project for release - `npm run build`
