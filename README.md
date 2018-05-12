@@ -61,7 +61,7 @@ Now you can run the project's `npm` scripts like usuual:
 
 Learn more about Docker [here](https://docs.docker.com/get-started/) or [configuring Headless Chrome for your own machine](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md).
 
-#### Tasks
+#### Workflows
 1. To run unit tests - `npm run test`
 1. To build the project - `npm run ci`
 1. To build the project for release - `npm run build`
