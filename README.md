@@ -1,8 +1,8 @@
 # HTML Critical Webpack Plugin  
 
-A fork of Critical Webpack Plugin.
+[![CircleCI](https://circleci.com/gh/anthonygore/html-critical-webpack-plugin/tree/master.svg?style=svg)](https://circleci.com/gh/anthonygore/html-critical-webpack-plugin/tree/master)
 
-This is simplified and runs after all files have been emitted so you can use it after Extract Text and HTML Webpack Plugin.
+This plugin extracts critical CSS and runs after all files have been emitted so you can use it after Extract Text and HTML Webpack Plugin.
 
 **Note**: [As **critical** itself has a dependency on puppeteer](https://github.com/addyosmani/critical/releases/tag/v1.0.0) in order to run Headless Chrome, consumers of this plugin will need to make sure that their build environment (local, CI, etc) where they are running webpack with this plugin has the necessary operating system packages installed.  See this page for more information on [troubleshooting](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md) puppeteer.
 
