@@ -1,6 +1,7 @@
 const critical = require('critical');
 
 class HtmlCriticalWebpackPlugin {
+
   constructor(options) {
     this.options = options;
   }
@@ -12,12 +13,11 @@ class HtmlCriticalWebpackPlugin {
   }
 
   apply(compiler) {
-
     compiler.hooks.afterEmit.tapAsync('HtmlCriticalWebpackPlugin', (compilation, callback) => {
       this.emit(compilation, callback);
     });
-
   }
+  
 }
 
 module.exports = HtmlCriticalWebpackPlugin;
