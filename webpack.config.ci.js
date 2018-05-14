@@ -1,6 +1,6 @@
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackCriticalPlugin = require('./index');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -8,6 +8,8 @@ const OUTPUT_DIR = path.resolve(__dirname, 'build');
 
 module.exports = {
   
+  mode: 'production',
+
   entry: {
     index: './test/cases/generate-critical-css/index.js'
   },
@@ -20,16 +22,17 @@ module.exports = {
   module: {
     rules: [{
       test: /\.css$/,
-      use: ExtractTextWebpackPlugin.extract({
-        use: ['css-loader']
-      })
+      use: [
+        MiniCssExtractPlugin.loader,
+        'css-loader'
+      ]
     }]
   },
 
   plugins: [
     new HtmlWebpackPlugin(),
 
-    new ExtractTextWebpackPlugin('styles.[chunkhash].css'),
+    new MiniCssExtractPlugin(),
     
     new HtmlWebpackCriticalPlugin({
       base: OUTPUT_DIR,

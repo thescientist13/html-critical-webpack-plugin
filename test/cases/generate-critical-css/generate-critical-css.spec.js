@@ -35,6 +35,9 @@ describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
         assert.equal(linkTags[0].getAttribute('rel'), 'preload');
         assert.equal(linkTags[0].getAttribute('as'), 'style');
 
+        assert.equal(linkTags[1].getAttribute('rel'), 'preload');
+        assert.equal(linkTags[1].getAttribute('as'), 'style');
+
         done();
       })
     });

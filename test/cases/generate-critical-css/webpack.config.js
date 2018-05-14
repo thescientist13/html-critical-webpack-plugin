@@ -1,10 +1,13 @@
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackCriticalPlugin = require('../../../index');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+
+  mode: 'production',
+
   entry: {
     index: path.resolve(__dirname, 'index.js'),
     main: path.resolve(__dirname, 'main.js')
@@ -12,21 +15,24 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'build'),
+    filename: '[name].[chunkhash].bundle.js'
   },
 
-    module: {
-      rules: [{
-        test: /\.css$/,
-        use: ExtractTextWebpackPlugin.extract({
-          use: ['css-loader']
-        })
-      }
-    ]
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: [
+        MiniCssExtractPlugin.loader,
+        'css-loader'
+      ]
+    }]
   },
 
   plugins: [
     new HtmlWebpackPlugin(),
-    new ExtractTextWebpackPlugin('styles.[chunkhash].css'),
+
+    new MiniCssExtractPlugin(),
+    
     new HtmlWebpackCriticalPlugin({
       base: path.resolve(__dirname, 'build'),
       src: 'index.html',
