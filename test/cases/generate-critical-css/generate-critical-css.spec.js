@@ -3,7 +3,6 @@ const fs = require('fs');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const path = require('path');
-const rimraf = require('rimraf');
 const webpackConfig = require('./webpack.config');
 const webpack = require('webpack');
 
@@ -14,7 +13,7 @@ describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
 
     it('should generate the expected critical inline <style> tag', (done) => {
       webpack(webpackConfig, () => {
-        const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, {encoding: 'utf8'});
+        const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, { encoding: 'utf8' });
         const indexHtmlDom = new JSDOM(indexHtmlString);
         const inlineStyleTags = indexHtmlDom.window.document.querySelectorAll('style');
         
@@ -27,7 +26,7 @@ describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
 
     it('should generate the expected critical <link> tag', (done) => {
       webpack(webpackConfig, () => {
-        const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, {encoding: 'utf8'});
+        const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, { encoding: 'utf8' });
         const indexHtmlDom = new JSDOM(indexHtmlString);
         const linkTags = indexHtmlDom.window.document.querySelectorAll('link');
         
@@ -39,12 +38,12 @@ describe('HtmlCriticalWebpackPlugin Cases: Generate Critical CSS', () => {
         assert.equal(linkTags[1].getAttribute('as'), 'style');
 
         done();
-      })
+      });
     });
 
     it('should generate the expected critical <noscript> tag', (done) => {
       webpack(webpackConfig, () => {
-        const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, {encoding: 'utf8'});
+        const indexHtmlString = fs.readFileSync(`${buildDirectory}/index.html`, { encoding: 'utf8' });
         const indexHtmlDom = new JSDOM(indexHtmlString);
         const noscriptTags = indexHtmlDom.window.document.querySelectorAll('noscript');
         

@@ -1,12 +1,16 @@
-const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname + '/index.js'),
+
+  mode: 'production',
+
+  entry: path.resolve(path.join(__dirname, 'index.js')),
+  
   output: {
-    path: path.resolve(__dirname + '/dist/'),
+    path: path.resolve(path.join(__dirname, 'dist/')),
     filename: 'html-crtitical-webpack-plugin.js'
   },
+  
   module: {
     rules: [
       {
@@ -17,7 +21,9 @@ module.exports = {
       }
     ]
   },
+  
   externals: {
     critical: 'critical'
   }
+
 };

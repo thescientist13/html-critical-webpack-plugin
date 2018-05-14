@@ -1,13 +1,12 @@
 const HtmlWebpackCriticalPlugin = require('./index');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
 const path = require('path');
 
 const OUTPUT_DIR = path.resolve(__dirname, 'build');
 
 module.exports = {
-  
+
   mode: 'production',
 
   entry: {

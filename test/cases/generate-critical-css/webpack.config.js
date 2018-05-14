@@ -1,13 +1,12 @@
 const HtmlWebpackCriticalPlugin = require('../../../index');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
 
   mode: 'production',
-
+  
   entry: {
     index: path.resolve(__dirname, 'index.js'),
     main: path.resolve(__dirname, 'main.js')

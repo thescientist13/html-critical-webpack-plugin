@@ -22,12 +22,14 @@
   "homepage": "https://github.com/anthonygore/html-critical-webpack-plugin#readme",
   "scripts": {
     "clean": "rimraf ./dist && rimraf ./test/cases/**/build",
-    "build": "npm run clean && webpack --config ./webpack.config.js",
+    "build": "npm run clean && npm run lint && webpack --config ./webpack.config.js",
+    "lint": "eslint *.js test/**/*.js",
     "ci": "npm run clean && webpack --config ./webpack.config.ci.js",
     "test": "npm run clean && mocha ./test/**/*.spec.js --timeout 5000"
   },
   "dependencies": {
-    "critical": "^1.0.0"
+    "critical": "^1.0.0",
+    "eslint": "^4.19.1"
   },
   "files": [
     "README.md",
