@@ -10,7 +10,7 @@ Check out the [demo](https://github.com/anthonygore/hcwp-demo) or read the blog 
 npm i --save-dev html-critical-webpack-plugin
 ```
 
-**Note**: [As **critical** itself has a dependency on puppeteer](https://github.com/addyosmani/critical/releases/tag/v1.0.0) in order to run Headless Chrome, consumers of this plugin will need to make sure that their build environment (local, CI, etc) where they are running Webpack with this plugin has the necessary operating system packages installed.  See this page for more information on [troubleshooting](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md) puppeteer.
+> **Note**: [As **critical** itself has a dependency on puppeteer](https://github.com/addyosmani/critical/releases/tag/v1.0.0) in order to run Headless Chrome, consumers of this plugin will need to make sure that their build environment (local, CI, etc) where they are running Webpack with this plugin has the necessary operating system packages installed.  See this page for more information on [troubleshooting](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md) puppeteer.
 
 ## Example
 
@@ -18,7 +18,6 @@ npm i --save-dev html-critical-webpack-plugin
 ...
 
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
-
 
 module.exports = {
   mode: 'production',
