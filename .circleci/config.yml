@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: thegreenhouse/nodejs-dev
+      - image: thegreenhouse/nodejs-dev:0.2.0
 
     working_directory: ~/repo
 
@@ -25,5 +25,5 @@ jobs:
           command: npm test
 
       - run:
-          name: Run CI Build
-          command: npm run ci
+          name: Run Build
+          command: npm run build

@@ -1,29 +1,43 @@
+const HtmlWebpackCriticalPlugin = require('./src/index');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+
+const OUTPUT_DIR = path.resolve(__dirname, 'build');
 
 module.exports = {
 
   mode: 'production',
 
-  entry: path.resolve(path.join(__dirname, 'index.js')),
-  
-  output: {
-    path: path.resolve(path.join(__dirname, 'dist/')),
-    filename: 'html-crtitical-webpack-plugin.js'
+  entry: {
+    index: './test/cases/generate-critical-css/index.js'
   },
-  
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        include: __dirname,
-        exclude: /node_modules/
-      }
-    ]
-  },
-  
-  externals: {
-    critical: 'critical'
-  }
 
+  output: {
+    path: OUTPUT_DIR,
+    filename: 'html-crtitical-webpack-plugin.[contenthash].js'
+  },
+
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: [
+        MiniCssExtractPlugin.loader,
+        'css-loader'
+      ]
+    }]
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin(),
+
+    new MiniCssExtractPlugin(),
+    
+    new HtmlWebpackCriticalPlugin({
+      base: OUTPUT_DIR,
+      src: 'index.html',
+      dest: 'index.html',
+      inline: true
+    })
+  ]
 };

@@ -2,7 +2,7 @@
   "name": "html-critical-webpack-plugin",
   "version": "2.0.0",
   "description": "Webpack plugin for the critical CSS inliner library.",
-  "main": "dist/html-critical-webpack-plugin.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anthonygore/html-critical-webpack-plugin.git"
@@ -24,7 +24,6 @@
     "clean": "rimraf ./dist && rimraf ./test/cases/**/build",
     "build": "npm run clean && npm run lint && webpack --config ./webpack.config.js",
     "lint": "eslint *.js test/**/*.js",
-    "ci": "npm run clean && npm run lint && webpack --config ./webpack.config.ci.js",
     "test": "npm run clean && mocha ./test/**/*.spec.js --timeout 5000"
   },
   "dependencies": {
@@ -35,8 +34,6 @@
     "index.js"
   ],
   "devDependencies": {
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
     "css-loader": "^0.28.10",
     "eslint": "^4.19.1",
     "html-webpack-plugin": "^3.2.0",
