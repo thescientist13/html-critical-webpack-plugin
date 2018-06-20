@@ -1,6 +1,6 @@
 # HTML Critical Webpack Plugin [![npm version](https://badge.fury.io/js/html-critical-webpack-plugin.svg)](https://badge.fury.io/js/html-critical-webpack-plugin) [![CircleCI](https://circleci.com/gh/anthonygore/html-critical-webpack-plugin/tree/master.svg?style=svg)](https://circleci.com/gh/anthonygore/html-critical-webpack-plugin/tree/master)
 
-This plugin extracts critical CSS and runs after all files have been emitted so you can use it after Mini CSS Extract Plugin and HTML Webpack Plugin.
+This plugin extracts critical CSS and runs after all files have been emitted so you can use it after Mini CSS Extract Plugin and HTML Webpack Plugin. 
 
 Check out the [demo](https://github.com/anthonygore/hcwp-demo) or read the blog post [Critical CSS and Webpack: Automatically Minimize Render-Blocking CSS](https://vuejsdevelopers.com/2017/07/24/critical-css-webpack/) for more details on usage.
 
@@ -41,6 +41,11 @@ module.exports = {
   ...
 };
 ```
+
+**Note:** Order is import here since [**critical**](https://www.npmjs.com/package/critical), the underlying packages used by this plugin, only operates against the file system, and not against webpack's build time compilation.  The order of operations by critical is as such:
+1. Reads the file from disk as defined by the _src_ option
+2. Extracts the CSS from that file that is deemed as "critical"
+3. Writes the new file back to disk with that critical CSS inlined, at the location of the _dest_ option
 
 ## Development
 
