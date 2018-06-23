@@ -42,7 +42,7 @@ module.exports = {
 };
 ```
 
-**Note:** Order is import here since [**critical**](https://www.npmjs.com/package/critical), the underlying packages used by this plugin, only operates against the file system, and not against webpack's build time compilation.  The order of operations by critical is as such:
+**Note:** Order is import here since [**critical**](https://www.npmjs.com/package/critical), the underlying package used by this plugin, only operates against the _file system_, and not against **webpack**'s build time compilation.  The order of operations by critical is as such:
 1. Reads the file from disk as defined by the _src_ option
 2. Extracts the CSS from that file that is deemed as "critical"
 3. Writes the new file back to disk with that critical CSS inlined, at the location of the _dest_ option
